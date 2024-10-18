@@ -4,8 +4,7 @@
 <img src="assets/Heart-attack-1-1000x600.jpg" width="300" height="300">
 </p>
 
-> [!NOTE]
-> This repository shows a predictive model for survival after a heart attack from the Echocardiogram dataset from UC Irvine :shipit:
+This repository shows a predictive model for survival after a heart attack from the Echocardiogram dataset from UC Irvine :shipit:
 
 ### Table of Contents
 - [Required Tools and Packages](#Required-Tools-and-Packages)
@@ -40,7 +39,7 @@ All the patients suffered heart attacks at some point in the past. Some are stil
 The problem addressed by past researchers was to predict from the other variables whether or not the patient will survive at least one year.  The most difficult part of this problem is correctly predicting that the patient will NOT survive.  (Part of the difficulty seems to be the size of the data set.)
 
 <a name="Dataset-Information"></a>
-###### Variables
+##### Variables
 The following variables are taken into consideration into the survival prediction:
 
    1. survival -- the number of months patient survived (has survived, if patient is still alive).  Because all the patients had their heart attacks at different times, it is possible that some patients have survived less than one year but they are still alive.  Check the second variable to confirm this.  Such patients cannot be used for the prediction task mentioned above.
