@@ -75,7 +75,7 @@ At first glance the survival after 1 year showed a positive correlation with all
 <img src="assets/corr_matrix.png">
 </p>
 
-The overall distributions of the variables (not shown) portray different distributions according to the alive-at-1 label.
+The overall distributions of the variables portray different distributions according to the alive-at-1 label.
 
 <p align="center">
 <img src="assets/dist_matrix.png">
@@ -106,5 +106,11 @@ Where analysis_arguments can take the following arguments:
   * `XGBoost`
   * `SVM`
   * `KNN`
+
+Running the command `python classifier.py input.csv all log_reg` gives an accuracy of 0.96 (macro avg f1-score of 0.95) (see below for results).
+
+<p align="center">
+<img src="assets/4_plots_grid.png">
+</p>
 
 Together our exploratory results and simple classifier show the capability of predicting the survival probability of a person that has had a heart attack 🎆
