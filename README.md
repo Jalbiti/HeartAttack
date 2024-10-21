@@ -64,7 +64,7 @@ In order to study the relationship between the available variables, some preproc
 1. Removed rows where survival data was missing.
 2. Changed the variable types to the corresponging defined `dtypes`.
 
-The ouput from running `python scripts/dataPreprocessing.py` will generate the input to the classifier (see [Running the classifier](#Running-the-classifier)). 
+The ouput from running `python scripts/exploratory.py` will generate the input to the classifier (see [Running the classifier](#Running-the-classifier)). 
 
 <a name="Data-Exploration"></a>
 ##### Data Exploration
