@@ -30,7 +30,19 @@ df = pd.read_csv(filename, header=True)
 df = candidate_train_test
 # Create a new column for rows with valid alive-at-1 values (0 or 1)
 df['valid-alive-at-1'] = df['alive-at-1'].apply(lambda x: 1 if x in [0, 1] else 0)
+
+# Drop unnecessary columns
 df_clean = df.drop(columns=['name', 'group', 'mult', 'still-alive', 'wall-motion-score'])
+
+if chosen_features != "all":
+    missing_columns = [col for col in chosen_features if col not in df_clean.columns]
+    
+    if missing_columns:
+        # Raise an error if there are missing columns
+        raise ValueError(f"The following columns are not in the DataFrame: {missing_columns}")
+    else:
+        # Keep only the columns specified in chosen_features
+        df_clean = df_clean[chosen_features]
 
 # Separate rows with valid and invalid 'alive-at-1' labels
 valid_rows = df_clean[df_clean['valid-alive-at-1'] == 1]
