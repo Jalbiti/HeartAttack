@@ -1,16 +1,16 @@
 # Heart Attack Survival Prediction
 
 <p align="center">
-<img src="assets/Heart-attack-1-1000x600.jpg" width="300" height="300">
+<img src="assets/Heart-attack-1-1000x600.jpg" width="600" height="300">
 </p>
 
-This repository shows a predictive model for survival after a heart attack from the Echocardiogram dataset from UC Irvine :shipit:
+This repository shows a predictive model for a one year survival after a heart attack from the Echocardiogram dataset from UC Irvine :shipit:
 
 ### Table of Contents
 - [Required Tools and Packages](#Required-Tools-and-Packages)
 - [Data Analysis](#Data-Analysis)
   - [HeartAttack Data Set](#Echocardiogram-Data-Set)
-    - [Dataset_Informatio](#Dataset-Informatio) 
+    - [Dataset_Information](#Dataset-Information) 
   - [Data Preprocessing](#Data-Preprocessing)
   - [Data Exploration](#Data-Exploration)
 - [Data Model](#Data-Model)
@@ -64,21 +64,22 @@ In order to study the relationship between the available variables, some preproc
 1. Removed rows where survival data was missing.
 2. Changed the variable types to the corresponging defined `dtypes`.
 
+The ouput from running `python scripts/dataPreprocessing.py` will generate the input to the classifier (see [Running the classifier](#Running-the-classifier)). 
+
 <a name="Data-Exploration"></a>
 ##### Data Exploration
 
-A first glance at the data showed higher total and averaged values of chocolate consumption and laureates per 10 million in Europe in comparison to other regions. The region-wise and worldwide distributions of laureates show skewed profiles, as seen by the fact that the 90% quantile is found at 28.8 Nobel laureates.
+At first glance the survival after 1 year showed a positive correlation with all variables (not considering survival and still alive) except with the fractional-shortening where we see a negative correlation.
 
 <p align="center">
-<img src="assets/XXX.png">
+<img src="assets/corr_matrix.png">
 </p>
+
+The overall distributions of the variables (not shown) portray different distributions according to the alive-at-1 label.
 
 <p align="center">
-<img src="assets/XXX.png">
-<img src="assets/XXX.png">
+<img src="assets/dist_matrix.png">
 </p>
-
-A second analysis allows the first intuition of a link between the chocolate consumption and the laureates production. However, this analysis shows that two additional variables could influence the observed correlation: **region** and **estimated_gdp**.
 
 > [!NOTE]
 > All of the below described results can be reproduced by using the `scripts/exploratory.py` file.
@@ -86,19 +87,19 @@ A second analysis allows the first intuition of a link between the chocolate con
 <a name="Data-Model"></a>
 ### Data Model
 
-This repository provides a simple classifier that allows the prediction of survival for a certain person given the described variabled (see [Dataset_Informatio](#Dataset-Informatio))
+This repository provides a simple classifier that allows the prediction of survival for a certain person given the described variabled (see [Dataset_Information](#Dataset-Information))
 
 <a name="Running-the-classifier"></a>
 ##### Running the classifier
 
-The current version with the classifier details can be found at scripts/classifier.py. To run the classifier and reproduce the results simply run:
+The current version with the classifier details can be found at `scripts/classifier.py`. To run the classifier and reproduce the results simply run:
 
 `python classifier.py [analysis_arguments]`
 
 Where analysis_arguments can take the following arguments:
 
 1. Data file to be used.
-2. Variables to be used in the prediction. Currently need to choose from the described variabled (see [Dataset_Informatio](#Dataset-Informatio))
+2. Variables to be used in the prediction. Currently need to choose from the described variabled (see [Dataset_Information](#Dataset-Information) ))
 3. Classifier Architecture to be used:
   * `Logistic Regressor`
   * `Random Forest`
